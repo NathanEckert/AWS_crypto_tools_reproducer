@@ -111,8 +111,7 @@ public class TestEndOfStreamBehavior {
 			startPosition += byteRead;
 			if (byteRead == 0) {
 				// Crypto Tools cannot get this case to ever occur.
-				System.out.println("Looping indefinitely with an encryption client, as startPosition is not increasing");
-				break;
+				throw new AssertionError("Looping indefinitely with an encryption client, as startPosition is not increasing");
 			}
 		}
 	}
